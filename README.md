@@ -5,7 +5,9 @@
 * 개요: Mask R-CNN을 이용한 항공사진에서 객체 탐지 실험
 * 키워드: object detection, mask r-cnn, keras, DOTA dataset, aerial imagery
 
-
+* 수정자: 건국대학교 지형영상처리 연구실 원태연
+* 작성일자: 2020-04-07
+* 개요: Mask R-CNN을 이용한 항공사진에서 객체 탐지 실험 - 쉽게 학습을 가능하게.
 
 ## Results
 
@@ -55,14 +57,21 @@ conda activate detection
 
 ### Dependencies
 
-- tensorflow
+for cpu
+- tensorflow 1.15.2
 - keras 2.2.5
 - scikit-image
 - matplotlib
 - IPython[all]
 - imageio
 
-
+for gpu
+- tensorflow-gpu 1.15.0 (anaconda3)
+- keras-gpu 2.2.4 (anaconda3)
+- scikit-image
+- matplotlib
+- IPython[all]
+- imageio
 
 ### Installation
 
