@@ -642,7 +642,7 @@ def save_result_box(image, boxes, masks, class_ids, class_names,
         if show_bbox:
             p = patches.Rectangle((x1, y1), x2 - x1, y2 - y1, linewidth=2,
                                   alpha=0.7, linestyle="solid",
-                                  edgecolor=color, facecolor='none')
+                                  edgecolor=color, facecolor='red')
             ax.add_patch(p)
 
         # Label
