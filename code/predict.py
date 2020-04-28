@@ -65,7 +65,7 @@ if __name__ == '__main__':
         basename = os.path.basename(path)
         save_name = "{}_detect_count{}.{}".format(basename.split('.')[0], count, basename.split('.')[1])
 
-        visualize.save_result_box(image, r['rois'], r['masks'], r['class_ids'], class_names, IMAGE_DIR,
+        visualize.save_result_mask(image, r['rois'], r['masks'], r['class_ids'], class_names, IMAGE_DIR,
                                   save_name, r['scores'], auto_show=False)
 
     print("finish")
