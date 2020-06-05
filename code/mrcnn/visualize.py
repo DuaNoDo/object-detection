@@ -506,8 +506,8 @@ def save_result_mask(image, boxes, masks, class_ids, class_names,
                      save_dir, save_name,
                      scores=None, title="",
                      figsize=(16, 16), ax=None,
-                     show_mask=True, show_bbox=False,
-                     colors=None, captions=None, auto_show=True):
+                     show_mask=True, show_bbox=True,
+                     colors=None, captions=None, auto_show=False):
     """
     boxes: [num_instance, (y1, x1, y2, x2, class_id)] in image coordinates.
     masks: [height, width, num_instances]
@@ -596,7 +596,7 @@ def save_result_box(image, boxes, masks, class_ids, class_names,
                     save_dir, save_name,
                     scores=None, title="",
                     figsize=(16, 16), ax=None,
-                    show_mask=True, show_bbox=True,
+                    show_mask=False, show_bbox=True,
                     colors=None, captions=None, auto_show=True):
     """
     boxes: [num_instance, (y1, x1, y2, x2, class_id)] in image coordinates.
@@ -613,6 +613,9 @@ def save_result_box(image, boxes, masks, class_ids, class_names,
     captions: (optional) A list of strings to use as captions for each object
     """
     # Number of instances
+    print("--------------------------------------------------")
+    print(boxes)
+    print("--------------------------------------------------")
     N = boxes.shape[0]
     if not N:
         print("\n*** No instances to display *** \n")
