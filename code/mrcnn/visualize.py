@@ -506,7 +506,7 @@ def save_result_mask(image, boxes, masks, class_ids, class_names,
                      save_dir, save_name,
                      scores=None, title="",
                      figsize=(16, 16), ax=None,
-                     show_mask=True, show_bbox=True,
+                     show_mask=True, show_bbox=False,
                      colors=None, captions=None, auto_show=True):
     """
     boxes: [num_instance, (y1, x1, y2, x2, class_id)] in image coordinates.
