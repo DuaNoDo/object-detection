@@ -51,6 +51,11 @@ if __name__ == '__main__':
     class_names = ['BG', 'object']
     imgs = [join(IMAGE_DIR, f) for f in listdir(IMAGE_DIR) if
             isfile(join(IMAGE_DIR, f)) and f.lower().endswith(('.png', '.jpg'))]
+
+    # print("----------------------------------")
+    # print(args.weights[-5:-3])
+    # print("----------------------------------")
+    # os.mkdir(IMAGE_DIR+"/epoch_"+args.weights[-5:-3])
     for path in imgs:
         image = skimage.io.imread(path)
         if image.shape[-1] == 4:
@@ -59,13 +64,17 @@ if __name__ == '__main__':
         # Run detection
         results = model.detect([image], verbose=1)
 
+        print("----------------------------------")
+        print(results[0].get("rois"))
+        print(results[0].get("masks"))
+        print("----------------------------------")
         # Visualize & save results
         r = results[0]
         count = r.get("rois").shape[0]
         basename = os.path.basename(path)
         save_name = "{}_detect_count{}.{}".format(basename.split('.')[0], count, basename.split('.')[1])
 
-        visualize.save_result_box(image, r['rois'], r['masks'], r['class_ids'], class_names, IMAGE_DIR,
+        visualize.save_result_mask(image, r['rois'], r['masks'], r['class_ids'], class_names, IMAGE_DIR,
                                   save_name, r['scores'], auto_show=False)
 
     print("finish")
