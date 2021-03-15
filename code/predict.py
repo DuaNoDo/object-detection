@@ -64,10 +64,10 @@ if __name__ == '__main__':
         # Run detection
         results = model.detect([image], verbose=1)
 
-        print("----------------------------------")
-        print(results[0].get("rois"))
-        print(results[0].get("masks"))
-        print("----------------------------------")
+        # print("----------------------------------")
+        # print(results[0].get("rois"))
+        # print(results[0].get("masks"))
+        # print("----------------------------------")
         # Visualize & save results
         r = results[0]
         count = r.get("rois").shape[0]
