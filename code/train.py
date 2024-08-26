@@ -121,8 +121,9 @@ class objectDataset(utils.Dataset):
         # We mostly care about the x and y coordinates of each region
         # Note: In VIA 2.0, regions was changed from a dict to a list.
         annotations = json.load(open(os.path.join(dataset_dir, "via_region_data.json"), encoding="utf-8"))
-        via_1_check = annotations.get('regions')
-        via_2_check = annotations.get('_via_img_metadata')
+        annotations = list(annotations.values())
+        #via_1_check = annotations.get('regions')
+        #via_2_check = annotations.get('_via_img_metadata')
 
         # JSON is formatted with VIA-1.x
         if via_1_check:
